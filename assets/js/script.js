@@ -163,4 +163,26 @@ function generatePassword() {
     choices = symbolOptions;
     console.log(choices);
   }
+
+  let randomizedPassword = "";
+
+  for (var i = 0; i < numCharacters; i++) {
+    randomizedPassword =
+      randomizedPassword + choices[Math.floor(Math.random() * choices.length)];
+    console.log(randomizedPassword);
+  }
+
+  return randomizedPassword;
 }
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
