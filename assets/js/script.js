@@ -79,3 +79,22 @@ const symbolOptions = [
 ];
 
 var choices = [];
+
+function generatePassword() {
+  var numCharacters = prompt(
+    "how many characters would you like your password to have between 8 and 128 characters?"
+  );
+  if (numCharacters < 8 || numCharacters > 128) {
+    alert("Must be betweenn 8 and 128 characters!");
+    generatePassword();
+  }
+
+  var includeUpper = confirm("Would you like to include Uppercase letters?");
+  var includeLower = confirm("Would you like to include Lowercase letters?");
+  var includeNumbers = confirm(
+    "Would you like to include Numbers in your password?"
+  );
+  var includeSymbols = confirm(
+    "Would you like to include Special Characters in your password?"
+  );
+}
