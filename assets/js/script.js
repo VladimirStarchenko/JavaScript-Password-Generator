@@ -97,4 +97,70 @@ function generatePassword() {
   var includeSymbols = confirm(
     "Would you like to include Special Characters in your password?"
   );
+
+  //If patron makes no selection
+  if (!includeNumbers && !includeUpper && !includeLower && !includeSymbols) {
+    alert("You must make at least 1 valid character selection!");
+    console.log(choices);
+  }
+  //If patron chooses to include all selections
+  else if (includeUpper && includeLower && includeNumbers && includeSymbols) {
+    choices = uppercaseOptions.concat(
+      lowercaseOptions,
+      numberOptions,
+      symbolOptions
+    );
+    console.log(choices);
+  }
+  //if patron chooses to include 3 selections
+  else if (includeUpper && includeLower && includeNumbers) {
+    choices = uppercaseOptions.concat(lowercaseOptions, numberOptions);
+    console.log(choices);
+  } else if (includeUpper && includeLower && includeSymbols) {
+    choices = uppercaseOptions.concat(lowercaseOptions, symbolOptions);
+    console.log(choices);
+  } else if (includeLower && includeUpper && includeNumbers) {
+    choices = lowercaseOptions.concat(uppercaseOptions, numberOptions);
+    console.log(choices);
+  } else if (includeLower && includeUpper && includeSymbols) {
+    choices = lowercaseOptions.concat(uppercaseOptions, symbolOptions);
+    console.log(choices);
+  } else if (includeLower && includeNumbers && includeSymbols) {
+    choices = lowercaseOptions.concat(numberOptions, symbolOptions);
+    console.log(choices);
+  }
+  //if patron chooses to include 2 selections
+  else if (includeUpper && includeLower) {
+    choices = uppercaseOptions.concat(lowercaseOptions);
+    console.log(choices);
+  } else if (includeUpper && includeNumbers) {
+    choices = uppercaseOptions.concat(numberOptions);
+    console.log(choices);
+  } else if (includeUpper && includeSymbols) {
+    choices = uppercaseOptions.concat(symbolOptions);
+    console.log(choices);
+  } else if (includeLower && includeNumbers) {
+    choices = lowercaseOptions.concat(numberOptions);
+    console.log(choices);
+  } else if (includeLower && includeSymbols) {
+    choices = lowercaseOptions.concat(symbolOptions);
+    console.log(choices);
+  } else if (includeNumbers && includeSymbols) {
+    choices = numberOptions.concat(symbolOptions);
+    console.log(choices);
+  }
+  //if patron chooses to include 1 selection
+  else if (includeUpper) {
+    choices = uppercaseOptions;
+    console.log(choices);
+  } else if (includeLower) {
+    choices = lowercaseOptions;
+    console.log(choices);
+  } else if (includeNumbers) {
+    choices = numberOptions;
+    console.log(choices);
+  } else if (includeSymbols) {
+    choices = symbolOptions;
+    console.log(choices);
+  }
 }
